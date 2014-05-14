@@ -13,10 +13,7 @@ module.exports = function (req, res, next) {
       'https://' + req.header('host') + req.originalUrl
     );
   } else if ('HEAD' === req.method) {
-    return res.redirect(
-      301,
-      'https://' + req.header('host') + req.originalUrl
-    );
+    return next();
   } else {
     return res.send(403, 'Please use HTTPS.');
   }
