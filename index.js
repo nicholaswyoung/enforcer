@@ -1,4 +1,4 @@
-module.exports = function (req, res, next) {
+exports.https = function (req, res, next) {
   var https = req.secure;
 
   if (!https) {
@@ -17,4 +17,19 @@ module.exports = function (req, res, next) {
   } else {
     return res.send(403, 'Please use HTTPS.');
   }
+};
+
+exports.http = function (req, res, next) {
+  var https = req.secure;
+
+  if (!https) {
+    https = ('https' === req.headers['x-forwarded-proto']);
+  }
+
+  if (https) {
+    return res.redirect(
+      301,
+      'http://' + req.header('host') + req.originalUrl
+    );
+  } else { return next(); }
 };
