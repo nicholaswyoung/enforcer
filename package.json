@@ -1,6 +1,6 @@
 {
   "name": "enforcer",
-  "version": "0.0.5",
+  "version": "0.1.5",
   "description": "Force your Connect app to require SSL.",
   "main": "index.js",
   "scripts": {
