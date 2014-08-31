@@ -13,7 +13,7 @@ var express  = require('express')
 ,   app      = express();
 ,   enforcer = require('enforcer');
 
-app.use(enforcer);
+app.use(enforcer.https());
 
 app.get(function (req, res) {
   //.....  
