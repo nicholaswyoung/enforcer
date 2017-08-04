@@ -1,5 +1,7 @@
 # Enforcer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nicholaswyoung/enforcer.svg)](https://greenkeeper.io/)
+
 Force your Express and Connect applications to use SSL.
 
 ## Background
